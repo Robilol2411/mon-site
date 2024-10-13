@@ -1,0 +1,220 @@
+/* Importation de la police */
+@font-face {
+    font-family: "ma font";
+    src: url(./../../Fonts/MagilioRegular-8Mxvg.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+main{
+    margin-bottom: -1em;
+}
+/* Navigation dans le header */
+
+header, .text-bienvenue {
+    padding: 2em;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lien_nav_gauche{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lien_nav_droite{
+    display: flex;
+    justify-content: end;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+header, section{
+    background-color: #B7C3BA;
+}
+
+#suggestions{
+    padding:25px;
+    font-family: "ma font", sans-serif;
+}
+
+.logo {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+a {
+    font-family: "ma font", sans-serif;
+    color: #1B0E0E;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #354f52;
+}
+
+.lien{
+    padding: 6px;
+    border-radius: 7px;
+    background-color: #B7C3BA;
+}
+
+.lien:hover{
+    background-color:#354f52 ;
+    color: #B7C3BA;
+}
+
+/* Hero banner avec image qui reste dans le fond de l'écran */
+
+.hero-banner {
+    margin: 0;
+    padding: 150px;
+    height: 50%;
+    background: linear-gradient(#292d2a7e, rgba(84, 84, 84, 0.327)), url(./../../images/photo_hero_banner_categorie/banner_chateau.jpg);
+    background-position:bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-bienvenue,.titre-categorie{
+    text-align: center;
+    color: #1B0E0E;
+    font-family: "ma font", sans-serif;
+}
+
+/* Grille des biens */
+
+.titre-categorie{
+    padding: 1em;
+}
+
+.boite-categorie{
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #B7C3BA;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+}
+.boite-image{
+    flex:1 1 calc(25% - 40px);
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.boite-image img{
+    border: 2px solid rgb(93, 92, 92);
+    border-radius: 30px;
+    width:100%;
+    height: auto;
+}
+.boite-categorie a{
+    padding-right: 5px;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+    border: 3px solid rgb(255, 255, 255);
+}
+.boite-image div{
+    color: rgb(24, 100, 51);
+    text-align: justify;  
+}
+
+.boite-image div p{
+    margin: 0em;
+    padding: 0.6em 1em 1em;
+}
+
+/* Section du footer*/
+
+footer{
+    border-top: rgb(91, 91, 91) solid 1px;
+    margin: 0em;
+    padding: 1em;
+    background-color: white;
+}
+
+.conditions{
+    text-align: center;
+    font-family: "ma font", sans-serif;
+}
+
+/* Effet de zoom et de dézoom */
+
+.aggrandir { 
+    transition: all 0.2s ease-in-out; 
+}
+
+.aggrandir:hover { 
+    transform: scale(1.1); 
+}
+
+.dezoom{ 
+    transition: all 0.2s ease-in-out; 
+}
+
+.dezoom:hover { 
+    transform: scale(0.95); 
+}
+
+/* Partie responsive */
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+    header, .text-bienvenue {
+        padding: 10px;
+    }
+
+    .text-bienvenue {
+        font-size: 1.2em;
+    }
+    
+    .boite-image{
+        flex: 1 1 calc(33.33% - 40px);
+        max-width: calc(33.33% - 40px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header, .text-bienvenue {
+        padding: 5px;
+    }
+
+    .hero-banner {
+        padding: 100px;
+    }
+
+    .text-bienvenue {
+        font-size: 1em;
+    }
+
+    .boite-image{
+        flex: 1 1 100%;
+    }
+
+    /* deactive les liens  sur telephone pour montré que le necessaire*/
+    .cache{
+        display: none;
+    }
+}
